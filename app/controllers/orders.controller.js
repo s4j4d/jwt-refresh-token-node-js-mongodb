@@ -8,8 +8,8 @@ const bcrypt = require("bcryptjs");
 const Orders = require("../models/orders.model");
 
 exports.reserveTicket = (req, res) => {
-
-    redisClient.set()
+    const orderId = uuid()
+    redisClient.set(req.user ,uuid(),{EX:3600*2})
 
   order.save((err, user) => {
     if (err) {
